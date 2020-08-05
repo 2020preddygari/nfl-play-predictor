@@ -20,7 +20,7 @@ def convert_data(pass_offense_rankings, pass_defense_rankings, rush_offense_rank
         dataset_test.loc[i, "second"] = seconds
         dataset_test.loc[i, "quarter"] = (dataset_test.loc[i, "quarter"] + 1) // 2
 
-        # Delets kickoffs and dead plays.  Makes playtypes more general
+        # Deletes kickoffs and dead plays.  Makes playtypes more general
         if dataset_test.loc[i, "playtype"] == "NO PLAY" or dataset_test.loc[i, "playtype"] == "KICK OFF":
             dataset_test = dataset_test.drop([i])
             continue
